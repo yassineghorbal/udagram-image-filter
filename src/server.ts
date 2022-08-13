@@ -44,7 +44,7 @@ import * as URL from "url";
       res.sendFile(path);
       res.on("finish", () => deleteLocalFiles([path]));
     } catch {
-      return res.status(500).send({ error: "Unable to process your request" });
+      return res.status(404).send({ error: "Image not found" });
     }
   });
 
